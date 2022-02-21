@@ -11,6 +11,14 @@
       var currentItemValue;
 
       $(document).ready(function () {
+        // $("#ajouter").prop(disabled, true);
+        $('#supprimer').attr('disabled', true);
+        $('#ajouter').attr('disabled', true);
+        
+        if("#liste_fruits option:selected" || "#liste_fruits option:selected"!== undefined ){
+        $('#ajouter').attr('disabled', false);
+        // $("#ajouter").prop(disabled, false);
+          console.log("ici");
         $("#ajouter").click(function () {
           this.currentItemText = $("#liste_fruits option:selected").text();
           this.currentItemValue = $("#liste_fruits option:selected").val();
@@ -33,6 +41,10 @@
             ).remove();
           }
         });
+        }
+
+
+        
 
         $("#supprimer").click(function () {
           this.currentItemText = $("#panier option:selected").text();
